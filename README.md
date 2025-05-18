@@ -27,11 +27,10 @@ blogdown/
 ├── blog/ # Core blog app
 │ ├── models.py # Blog and contact models
 │ ├── views.py # Blog creation, listing, contact form handling
-│ ├── forms.py # BlogForm, ContactForm
-│ └── templates/ # HTML templates
-├── static/ # Static files (CSS, JS)
-├── media/ # Uploaded content (optional)
+│ └── urls.py # Handles url routes
+├── static/ # Static files (CSS, fonts)
 ├── blogdown/ # Project settings
+├── templates/ # HTML templates
 └── manage.py
 ```
 
