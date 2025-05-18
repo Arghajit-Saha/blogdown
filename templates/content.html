@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for blog in blogs %}
+    <a href="{{ blog.slug }}/" style="text-decoration: none;">
+        <div class="blog-post">
+            <span class="post-title">{{ blog.title }}</span>
+            <span class="post-date">{{ blog.date }}</span>
+        </div>
+    </a>
+    {% empty %}
+        <p class="not-found">No blogs found :(</p>
+    {% endfor %}
+{% endblock %}

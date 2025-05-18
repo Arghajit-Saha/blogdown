@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>BlogDown</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="nav">
+          <div class="logo">
+            <p>Blog<span class="span-title">Down</span></p>
+          </div>
+          <div class="opt">
+            <a href="/" id="home">Home</a>
+            <a href="{% url 'about' %}" id="about">About Us</a>
+            <a href="{% url 'contact' %}" id="contact">Contact Us</a>
+          </div>
+          <div class="new">
+            <a href="{% url 'create' %}">
+              <button id="new-b">
+                <span class="span-mother">
+                  <span>C</span>
+                  <span>r</span>
+                  <span>e</span>
+                  <span>a</span>
+                  <span>t</span>
+                  <span>e</span>
+                </span>
+                <span class="span-mother2">
+                  <span>C</span>
+                  <span>r</span>
+                  <span>a</span>
+                  <span>e</span>
+                  <span>t</span>
+                  <span>e</span>
+                </span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="content" id="content">{% block content %} {% endblock %}</div>
+
+      <div class="editor" id="editor">
+        {% block editorForm %} {% endblock %}
+      </div>
+
+      <div class="contact">{% block contactForm %} {% endblock %}</div>
+
+      <div class="about">{% block about %} {% endblock %}</div>
+    </div>
+  </body>
+</html>

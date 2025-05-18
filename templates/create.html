@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block editorForm %}
+
+	<div class="input">
+		<h1>Create New Blog</h1>
+		<form id="new-blog" method="post" class="new-blog">
+			{% csrf_token %}
+			<label for="title" class="blabel">Blog Title</label>
+			<input type="text" class="btitle" name="btitle" required placeholder="Enter the Title...">
+			<label for="blog" class="blabel">Content</label>
+			<textarea type="text" class="bcontent" name="bcontent" required placeholder="Blog Content goes here :)"></textarea>
+			<button type="submit" class="beditor">Post</button>
+		</form>
+	</div>
+	<div class="output" id="output">
+		<div class="output-title">
+			<h1>Output</h1>
+		</div>
+		<div class="md-out" id="md-out">
+			<div class="md-out-title" id="md-out-title">
+						
+			</div>
+			<div class="md-out-content" id="md-out-content">
+					
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<script>
+		document.querySelector('.btitle').addEventListener('input', function() {
+			const title = this.value;
+			const today = new Date();
+			const date = today.toLocaleDateString('en-us', {
+			year : 'numeric',
+			month : 'long',
+			day : 'numeric'
+		});
+			document.getElementById('md-out-title').innerHTML = `
+				<h2 class="post-title">${title}</h2>
+			`;
+			if(title != ''){
+				document.getElementById('md-out-title').innerHTML += `
+					<div class="post-date">${date}</div>
+				`;
+			}
+		});
+		document.querySelector('.bcontent').addEventListener('input', function() {
+			const md = this.value;
+			document.getElementById('md-out-content').innerHTML = marked.parse(md);
+		});
+		
+	</script>
+	
+{% endblock %}
