@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block profile %}
+<div class="profile-container">
+  <div class="profile-header">
+    <h2>Blog Posts by <span class="span-title">{{ user }}</span></h2>
+    <a class="btn-logout" href="{% url 'logout' %}">Logout</a>
+  </div>
+
+  {% if user.is_authenticated %} {% if blogs %}
+  <div class="blog-cards">
+    {% for blog in blogs %}
+    <div class="card">
+      <div class="card-header">
+        <a href="{% url 'page' blog.slug %}"><h3>{{ blog.title }}</h3></a>
+      </div>
+      <div class="card-footer">
+        <p><small>Posted on: {{ blog.date }}</small></p>
+        <div class="actions">
+          <a class="btn-edit" href="{% url 'edit_blog' blog.slug %}">Edit</a>
+          <a class="btn-delete" href="{% url 'delete_blog' blog.slug %}">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>This user has not posted any blogs yet.</p>
+  {% endif %} {% else %}
+  <p>Please log in to view profiles.</p>
+  {% endif %} {% endblock %}
+</div>

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block signup %}
+<div class="signup-page">
+    <div class="signup">
+        <h1>Sign Up</h1>
+        <form class="admin-form" method="post">
+            {% csrf_token %}
+            <div class="double">
+                <div class="input-field">
+                    <input type="text" name="first-name" required placeholder="First Name" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <input type="text" name="last-name" required placeholder="Last Name" autocomplete="off">
+                </div>
+            </div>
+            <div class="single">
+                <div class="input-field">
+                    <input type="text" name="username" required placeholder="Username" autocomplete="off">
+                </div>
+                <div class="input-field">
+                    <input type="email" name="email" required placeholder="Email Address" autocomplete="off">
+                </div>
+            </div>
+            <div class="double">
+                <div class="input-field">
+                    <input type="password" name="password" required placeholder="Password" autocomplete="new-password">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="confirm-password" required placeholder="Confirm Password" autocomplete="new-password">
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

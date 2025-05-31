@@ -1,12 +1,14 @@
 from django.db import models
 from django.utils.text import slugify
-import datetime
+from django.contrib.auth.models import User
+from django.utils import timezone
 
 class Create(models.Model):
     title = models.CharField()
     slug = models.SlugField(unique=True, blank=True)
     content = models.TextField()
-    date = models.DateField(default=datetime.date.today)
+    date = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:

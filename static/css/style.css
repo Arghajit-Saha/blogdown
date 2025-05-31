@@ -38,6 +38,7 @@ body {
   font-size: 29px;
   font-weight: 400;
   font-family: "Megat";
+  margin-right: 3rem;
 }
 
 .span-title {
@@ -132,6 +133,10 @@ button .span-mother span:nth-child(6) {
   transition: 0.7s;
 }
 
+button .span-mother span:nth-child(7) {
+  transition: 0.8s;
+}
+
 button .span-mother2 {
   display: flex;
   position: absolute;
@@ -170,12 +175,19 @@ button .span-mother2 span:nth-child(6) {
   transition: 0.7s;
 }
 
+button .span-mother2 span:nth-child(7) {
+  transition: 0.8s;
+}
+
 button:hover {
   transform: scale(1.05);
 }
 
 .new {
+  display: flex;
+  flex-direction: row;
   margin-right: 4rem;
+  gap: 1rem;
 }
 
 .input,
@@ -195,6 +207,7 @@ button:hover {
   display: flex;
   flex-direction: row;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .beditor {
@@ -328,6 +341,7 @@ hr {
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
+  margin-top: 4.5rem;
 }
 
 .contact input,
@@ -357,7 +371,7 @@ hr {
 .full-page {
   display: flex;
   flex-direction: column;
-
+  margin-top: 2rem;
   background: #d3d0f3;
   padding: 2rem;
   border-radius: 15px;
@@ -377,6 +391,14 @@ hr {
   font-family: JetBrains Mono, monospace;
 }
 
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
 .abouttxt {
   display: flex;
   flex-direction: column;
@@ -384,6 +406,319 @@ hr {
   background-color: #d3d0f3;
   border-radius: 25px;
 }
+
 .abouttxt h1 {
   text-align: center;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 7rem;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 40vh;
+  background-color: #d3d0f3;
+  border-radius: 25px;
+  width: 25%;
+}
+
+.login form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login input {
+  height: 2rem;
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem;
+  background-color: #e1dff7;
+}
+
+.signup-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 7rem;
+}
+
+.signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 55vh;
+  background-color: #d3d0f3;
+  border-radius: 25px;
+  width: 40%;
+}
+
+.signup form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.signup input {
+  height: 2rem;
+  border: none;
+  border-radius: 7px;
+  padding: 0.5rem;
+  background-color: #e1dff7;
+}
+
+.double {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.single {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.single input {
+  width: 97%;
+}
+
+.messages {
+  width: 30%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.alert {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.alert.info {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.alert.error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.alert.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.blog-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 300px;
+  -webkit-box-shadow: 6px 23px 143px -40px rgba(68, 0, 204, 0.72);
+  -moz-box-shadow: 6px 23px 143px -40px rgba(68, 0, 204, 0.72);
+  box-shadow: 6px 23px 40px -40px rgba(68, 0, 204, 0.72);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card-header {
+  background-color: #c1bdee;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 15px;
+  color: #333;
+}
+
+.card-footer {
+  padding: 10px;
+  background-color: #f8f8f8;
+  font-size: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions {
+  margin: 15px 10px;
+}
+
+.actions a {
+  margin: 0 5px;
+  text-decoration: none;
+  color: #14006d;
+  border: 1px solid #14006d;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-edit:hover {
+  background-color: #a3c21c;
+  
+}
+
+.btn-edit:hover {
+  background-color: rgb(117, 96, 2);
+  color: #fff;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.btn-delete:hover {
+  background-color: #a94442;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.edit-blog {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.btn-edit {
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #a3c21c;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.card-header a {
+  text-decoration: none;
+  color: #14006d;
+  font-weight: bold;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #d5d3f0;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  border-radius: 25px;
+  margin-top: 2rem;
+}
+
+.delete-confirmation {
+  background-color: #d3d0f3;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+.delete-confirmation h2 {
+  font-size: 28px;
+  margin-bottom: 1rem;
+  color: #3a1bc2;
+}
+
+.delete-confirmation p {
+  font-size: 18px;
+  margin-bottom: 2rem;
+}
+
+.delete-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.btn-delete-confirm {
+  background-color: #a94442;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-delete-confirm:hover {
+  background-color: #922d2d;
+  transform: scale(1.05);
+}
+
+.btn-cancel {
+  background-color: #3c763d;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #2e6b2e;
+  transform: scale(1.05);
+}
+
+.btn-delete-confirm{
+  width: 130px;
+  height: 40px;
+}
+
+.btn-logout {
+  background-color: #a94442;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.btn-logout:hover {
+  background-color: #922d2d;
+  transform: scale(1.05);
 }
