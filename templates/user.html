@@ -1,0 +1,41 @@
+{% extends "admin-dashboard.html" %}
+{% block users %}
+<div class="dashboard">
+  <h1 class="dashboard-title">User Management</h1>
+  <div class="dashboard-section">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Username</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>No. of Blogs</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- url 'user_delete' user.id  -->
+        {% for user in users %}
+            {% if not user.is_superuser %}
+                <tr>
+                    <td>{{ user.id|add:"-1" }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.get_full_name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.blog_count }}</td>
+                    <td>
+                        <a href="{% url 'user_delete' user.username %}" class="action-btn delete">Delete</a>
+                    </td>
+                </tr>
+            {% endif %}
+        {% empty %}
+        <tr>
+          <td colspan="6" style="text-align:center;">No users found.</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "admin-dashboard.html" %}
+{% block users %}
+<div class="dashboard">
+  <h1 class="dashboard-title">Blogs</h1>
+  <div class="dashboard-section">
+    {% if users %}
+      {% for user in users %}
+        <div class="user-blogs-group">
+          <h2 class="user-blog-title">{{ user.get_full_name|default:user.username }}</h2>
+          {% if user.blogs %}
+            <table class="user-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for blog in user.blogs %}
+                  <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                      <a href="{% url 'page' blog.slug %}" target="_blank">{{ blog.title }}</a>
+                    </td>
+                    <td>{{ blog.date|date:"Y-m-d H:i" }}</td>
+                    <td>
+                      <a href="{% url 'blog_delete' blog.slug %}" class="action-btn delete">Delete</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          {% else %}
+            <p class="no-blogs">No blogs found for this user.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No users or blogs found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

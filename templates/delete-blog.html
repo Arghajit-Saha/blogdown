@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'admin-dashboard.html' %}
 
-{% block content %}
+{% block blog %}
   <div class="delete-confirmation">
     <h2>Delete Blog Post</h2>
     <p>Are you sure you want to delete the post titled "<strong>{{ blog.title }}</strong>"?</p>
@@ -9,8 +9,7 @@
         {% csrf_token %}
         <button type="submit" class="btn-delete-confirm">Yes, Delete</button>
       </form>
-      <a href="{% url 'profile' %}" class="btn-cancel">Cancel</a>
+      <a href="{% url 'blogs' %}" class="btn-cancel">Cancel</a>
     </div>
   </div>
-  
 {% endblock %}

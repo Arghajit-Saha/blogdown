@@ -1,0 +1,38 @@
+{% extends "admin-dashboard.html" %}
+{% block contact_admin %}
+<div class="dashboard">
+  <h1 class="dashboard-title">Contact Messages</h1>
+  <div class="dashboard-section">
+    {% if contacts %}
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for contact in contacts %}
+          <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.email }}</td>
+            <td style="max-width: 300px; word-break: break-word;">{{ contact.message }}</td>
+            <td>{{ contact.date|date:"Y-m-d H:i" }}</td>
+            <td>
+              <a href="{% url 'contact_delete' contact.id %}" class="action-btn delete">Delete</a>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No contact messages found.</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

@@ -130,6 +130,10 @@ def edit_blog(request, slug):
 
 def delete_blog(request, slug):
     blog = get_object_or_404(Create, slug=slug)
+    if request.user != blog.user:
+        messages.error(request, "⚠️ You don't have permission to delete this blog post.")
+        return redirect('base')
+    
     if request.method == "POST":
         blog.delete()
         messages.success(request, "✅ Blog post deleted successfully!")

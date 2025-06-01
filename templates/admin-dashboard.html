@@ -1,10 +1,10 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/admin-dashboard.css' %}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/admin-dashboard.css' %}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,37 +12,43 @@
       rel="stylesheet"
     />
     <title>Admin - BlogDown</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="logo">
-                <p>Blog<span class="span-title">Down</span></p>
-            </div>
-            <div class="item-panel">
-                <div class="item">
-                    <ion-icon class="icon" name="grid"></ion-icon>
-                    <p>Dashboard</p>
-                </div>
-                <div class="item">
-                    <ion-icon class="icon" name="person"></ion-icon>
-                    <p>Users</p>
-                </div>
-                <div class="item">
-                    <ion-icon class="icon" name="document-text"></ion-icon>
-                    <p>Blogs</p>
-                </div>
-                <div class="item">
-                    <ion-icon class="icon" name="mail-open"></ion-icon>
-                    <p>Contact</p>
-                </div>
-            </div>
+      <div class="sidebar">
+        <div class="logo">
+          <p>Blog<span class="span-title">Down</span></p>
         </div>
-        <div class="dashboard">
-
+        <div class="item-panel">
+          <a href="{% url 'dashboard' %}" class="item">
+            <ion-icon class="icon" name="grid"></ion-icon>
+            <p>Dashboard</p>
+          </a>
+          <a href="{% url 'users' %}" class="item">
+            <ion-icon class="icon" name="person"></ion-icon>
+            <p>Users</p>
+          </a>
+          <a href="{% url 'blogs' %}" class="item">
+            <ion-icon class="icon" name="document-text"></ion-icon>
+            <p>Blogs</p>
+          </a>
+          <a href="{% url 'contact-admin' %}" class="item">
+            <ion-icon class="icon" name="mail-open"></ion-icon>
+            <p>Contact</p>
+          </a>
         </div>
-    </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-</body>
+      </div>
+      {% block dashboard %} {% endblock %}
+      {% block users %} {% endblock %}
+      {% block blog %} {% endblock %}
+      {% block contact_admin %} {% endblock %}
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

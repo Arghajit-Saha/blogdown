@@ -52,6 +52,9 @@
 		});
         document.addEventListener('DOMContentLoaded', function() {
             const bcontent = document.querySelector('.bcontent');
+            const btitle = document.querySelector('.btitle');
+            if(btitle && bcontent.value.trim() !== "")
+                document.getElementById('md-out-title').innerHTML = btitle.value;
             if(bcontent && bcontent.value.trim() !== "")
                 document.getElementById('md-out-content').innerHTML = marked.parse(bcontent.value);
         });

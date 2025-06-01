@@ -20,3 +20,4 @@ class Contact(models.Model):
     name = models.CharField()
     email = models.EmailField()
     message = models.TextField()
+    date = models.DateTimeField(default=timezone.now)
