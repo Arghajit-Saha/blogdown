@@ -17,7 +17,7 @@ Blogdown is a Django-based blogging platform that allows users to write blogs in
 ## 🛠️ Tech Stack
 
 - **Backend**: Django (Python)
-- **Frontend**: HTML, CSS (custom, responsive), JavaScript
+- **Frontend**: HTML, CSS, JavaScript
 - **Live Preview**: JavaScript + [marked.js](https://github.com/markedjs/marked)
 
 ---

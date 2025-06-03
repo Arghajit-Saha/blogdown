@@ -36,6 +36,10 @@
             <ion-icon class="icon" name="mail-open"></ion-icon>
             <p>Contact</p>
           </a>
+          <a href="{% url 'admin-logout' %}" class="item logout">
+            <ion-icon class="icon" name="log-out"></ion-icon>
+            <p>Logout</p>
+          </a>
         </div>
       </div>
       {% block dashboard %} {% endblock %}

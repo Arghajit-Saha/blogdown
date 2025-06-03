@@ -83,3 +83,7 @@ def contact_delete(request, id):
         contact.delete()
         return redirect('contact-admin')
     return render(request, 'delete-contact.html', {'contact': contact})
+
+def admin_logout(request):
+    logout(request)
+    return redirect('adminlogin')
